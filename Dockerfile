@@ -9,7 +9,7 @@ RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 RUN yum -y update
 RUN yum -y upgrade
 RUN yum -y install ntp
-RUN cp -p /usr/share/zoneinfo/UTC /etc/localtime
+RUN cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN ntpdate -s pool.ntp.org
 ADD ./template/ntp.conf /etc/ntp.conf
 RUN chkconfig ntpdate on
